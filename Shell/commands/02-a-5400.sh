@@ -1,5 +1,1 @@
-TODO: 
-OOP 10 11 12
-OS НЯКВИ ЗАДАЧИ
-ДУПРИЛ ВТОРА ЛЕКЦИЯ
-БАЗА-ДАННИ СЕМИНАРА
+find /etc -type f -mindepth 1 -maxdepth 2

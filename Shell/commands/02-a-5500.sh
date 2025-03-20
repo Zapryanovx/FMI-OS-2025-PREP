@@ -1,4 +1,1 @@
-TODO
-ООП - последната бонус задача
-ОС - няколко задачи
-ДУПР - 2 лекция и 2 упражнение
+find /etc/ -mindepth 1 -maxdepth 1 -type d | tail > result.txt

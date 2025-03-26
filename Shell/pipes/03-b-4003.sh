@@ -1,0 +1,1 @@
+grep -o . ./dir5/file{1,2,3} | sort | uniq -c | sort -nr

@@ -1,1 +1,1 @@
-find /etc -type f -maxdepth 2 -mindepth 1
+ln -s /etc/passwd passwd_symlink

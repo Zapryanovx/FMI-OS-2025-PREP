@@ -1,0 +1,1 @@
+find songs/ -type f | cut -d '-' -f2 | cut -c 2- | cut -d '(' -f1 | find songs/ -type f | cut -d '-' -f2 | cut -c 2- | cut -d '(' -f1 | rev | cut -c 2- | rev | sed 's/[A-Z]/\L&/g' | sed 's/ /_/g' | sort

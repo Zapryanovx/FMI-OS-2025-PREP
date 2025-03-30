@@ -1,0 +1,1 @@
+cat example-passwd | sort -t ':' -k 3n | head -n 201 | tail -n 1 | cut -d ':' -f 4 | xargs -I{} grep -E ".*:.*:.*:{}:.*" example-passwd | sort -n | tr ',' ':' | awk -F ':' '{printf "%s:%s\n", $5, $(NF-1)}'

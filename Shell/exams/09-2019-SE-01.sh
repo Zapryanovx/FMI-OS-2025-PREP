@@ -1,0 +1,1 @@
+cat input.data | tail -n +2 | sort -t ';' -k 3nr | cut -d ';' -f2 | head -n 1 | xargs -I{} awk -F ";" '$2 == "{}" {print $0}' input.data | sort -t ';' -k 3n | head -n 1 | awk -F ";" '{printf "%s\t%i\n", $1, $3}'

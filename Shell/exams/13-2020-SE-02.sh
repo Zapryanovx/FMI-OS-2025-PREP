@@ -1,0 +1,1 @@
+cat spacex.txt | tail -n +2 | grep -E "$(cat spacex.txt | tail -n +2 | grep 'Failure' | cut -d '|' -f2 | sort | uniq -c | sort -k1nr |  tr -s ' ' | cut -c 2- | cut -d ' ' -f2)" | sort -k1nr | head -n 1 | cut -d '|' -f 3,4 | awk -F '|' '{print $1":"$2}'

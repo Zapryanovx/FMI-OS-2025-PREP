@@ -1,4 +1,4 @@
-#!/bin/bash
+c#!/bin/bash
 
 if [[ $# -ne 2 ]]; then
     echo "2 args expected";
@@ -19,7 +19,7 @@ echo "hostname,phy,vlans,hosts,failover,VPN-3DES-AES,peers,VLAN Trunk Ports,lice
 
 while read file; do
     csv=$(basename "${file}" .log)
-
+    
     data=$(cat "${file}" \
     | grep -E '.+' \
     | sed -E "s/has a?n/has a:/g" \
@@ -30,7 +30,7 @@ while read file; do
     | cut -c 2- \
     | rev \
     | sed "s/, /,/g" \
-    | sed "s/ ,/,/g")
-
+    | sed "s/ ,/,/g") 
+    
     echo "${csv}${data}" >> "${1}"
 done < <(find "${2}" -mindepth 1 -type f -name '*.log')

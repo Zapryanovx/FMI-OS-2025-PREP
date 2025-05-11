@@ -14,3 +14,4 @@ find "${1}" -mindepth 1 -maxdepth 1 -type f -printf "%f\n" 2>/dev/null \
 | grep -E "^vmlinuz-[0-9]+\.[0-9]+\.[0-9]+-${2}$" \
 | sort -V -r \
 | head -n 1
+

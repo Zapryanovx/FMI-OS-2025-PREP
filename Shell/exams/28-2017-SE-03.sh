@@ -38,5 +38,5 @@ while read user; do
 
 done < <(cat "${table}" | cut -d ' ' -f1 | sort | uniq)
 
-
 rm "${table}"
+

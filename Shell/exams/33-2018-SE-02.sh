@@ -25,8 +25,8 @@ touch "${2}/dict.txt"
 counter=1
 while read -r line; do
     name=$(echo "${line}" | cut -d '(' -f1 | tr -s ' ' | sed -E 's/^[ ]*//' | sed -E 's/[ ]*$//')
-    quote=$(echo "${line}" | cut -d ':' -f2 | tr -s ' ' | sed -E 's/^[ ]*//' | sed -E 's/[ ]*$//')
-
+    quote=$(echo "${line}" | cut -d ':' -f2 | tr -s ' ' | sed -E 's/^[ ]*//' | sed -E 's/[ ]*$//') 
+    
     if ! grep -q "^${name}" "${2}/dict.txt"; then
         echo "${name};${counter}" >> "${2}/dict.txt"
         touch "${2}/${counter}.txt"

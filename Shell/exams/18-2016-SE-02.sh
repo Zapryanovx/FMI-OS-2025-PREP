@@ -1,4 +1,5 @@
-#!/bin/bash
+!/bin/bash
+
 
 if [[ "$#" -ne 1 ]]; then
     echo "1 arg expected"
@@ -10,7 +11,7 @@ if [[ ! "$1" =~ ^[1-9][0-9]*$ ]]; then
     exit 1
 fi
 
-if [[ $(whoami) != "root" ]]; then
+if [[ $(whoami) != "s0600405" ]]; then
     echo "script must be run by root"
     exit 1
 fi

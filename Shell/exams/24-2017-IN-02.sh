@@ -46,3 +46,4 @@ while read user pid time; do
 done < <(cat "${processes}" | grep -E "^${1}")
 
 rm "${processes}"
+

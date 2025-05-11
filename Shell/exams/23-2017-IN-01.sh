@@ -23,3 +23,4 @@ while read el; do
 done < <(echo "${rhs}")
 
 sed -i -E "s/^${3}=.*/${3}=${result}/" ${1}
+

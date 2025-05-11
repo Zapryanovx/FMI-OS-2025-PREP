@@ -20,7 +20,7 @@ while read archive; do
 
     while read file; do
         if [[ $(basename "${file}") == "meow.txt" ]]; then
-            tar -xaf "${archive}" "${file}"
+            tar -xaf "${archive}" "${file}" 
             mv "${file}" "extracted/${name}_${timestamp}.txt"
 
             #tar --delete -f "${archive}" "${file}"
@@ -28,3 +28,4 @@ while read archive; do
     done < <(tar -tf "${archive}")
 
 done < <(find "${1}" -type f -printf "%p %T@\n" | grep -E "[^_]+_report-[1-9][0-9]*\.tgz" | awk -v lr="${lastRun}" '$2 > lr {print $1}')
+

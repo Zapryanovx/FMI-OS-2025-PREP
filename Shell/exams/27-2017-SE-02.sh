@@ -35,3 +35,4 @@ while read path; do
     fi
 done < <(find ${1} -mindepth 1 -type f)
 
+

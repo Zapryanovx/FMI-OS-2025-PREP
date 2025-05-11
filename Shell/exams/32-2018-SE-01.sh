@@ -15,7 +15,7 @@ friends=$(find ${1} -mindepth 3 -maxdepth 3 -type d | awk -F '/' '{print $NF}' |
 
 results=$(mktemp)
 while read -r friend log; do
-    lines=$(cat "${friend}/${log}" | wc -l)
+    lines=$(cat "${friend}/${log}" | wc -l)    
     echo "$(basename "${friend}") ${lines}" >> "${results}"
 done < <(echo "${logs}")
 
@@ -25,7 +25,9 @@ while read -r friend; do
     echo "${friend} ${total}" >> "${totalChats}"
 done < <(echo "${friends}")
 
-cat "${totalChats}" | sort -k 2nr | head
+cat "${totalChats}" | sort -k 2nr | head 
 
 rm "${results}"
 rm "${totalChats}"
+
+

@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 if [[ $# -lt 1 ]]; then
@@ -27,3 +26,4 @@ elif [[ $# -eq 2 ]]; then
 else
     echo "1 or 2 args expected"
 fi
+

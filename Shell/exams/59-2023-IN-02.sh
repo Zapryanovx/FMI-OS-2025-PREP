@@ -41,7 +41,7 @@ while read sha; do
     if [[ $(cat "${files_to_delete}" | wc -c) -eq 0 ]]; then
         cat "${hardlinks_to_delete}" >> "${to_remove}"
     elif [[ $(cat "${hardlinks_to_delete}" | wc -c) -eq 0 ]]; then
-        cat "${files_to_delete}" >> "${to_remove}"
+        cat "${files_to_delete}"  | tail -n +2 >> "${to_remove}"
     else
         cat "${hardlinks_to_delete}" >> "${to_remove}"
         cat "${files_to_delete}" >> "${to_remove}"
